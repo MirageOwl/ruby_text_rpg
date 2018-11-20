@@ -25,6 +25,7 @@ class JobProto
     Job.new jobname: job_name, **(stats.symbolize_keys)
   end
 end
+_job = JobProto.new
 
 class Character
   attr_accessor :name, :rank,
@@ -48,11 +49,3 @@ class Character
     "#{@name}, #{@job.job_name} #{@lv} Rank #{@rank}"
   end
 end
-
-job_proto = JobProto.new
-
-warrior =  job_proto.create "Warrior"
-hero = Character.new "Hero", warrior
-
-system 'clear'
-puts hero
